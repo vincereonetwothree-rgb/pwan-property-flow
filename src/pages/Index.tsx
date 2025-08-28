@@ -4,8 +4,13 @@ import { PWANSection } from "@/components/ui/pwan-section"
 import { PWANContainer } from "@/components/ui/pwan-container"
 import Navigation from "@/components/layout/Navigation"
 import Footer from "@/components/layout/Footer"
+import PropertiesGrid from "@/components/properties/PropertiesGrid"
+import { estates } from "@/data/estates"
 
 const Index = () => {
+  // Admin mode - hardcoded to false as specified
+  const isAdmin = false;
+
   const scrollToProperties = () => {
     const element = document.getElementById('properties');
     if (element) {
@@ -48,14 +53,17 @@ const Index = () => {
       {/* Properties Section Placeholder */}
       <PWANSection id="properties" className="bg-neutral-50">
         <PWANContainer>
-          <div className="text-center py-20">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-pwan-navy mb-6">
               Featured Properties
             </h2>
             <p className="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
-              Coming soon - Browse our exclusive collection of premium properties.
+              Browse our exclusive collection of premium properties across Lagos.
             </p>
           </div>
+          
+          {/* Properties Grid */}
+          <PropertiesGrid estates={estates} isAdmin={isAdmin} />
         </PWANContainer>
       </PWANSection>
 
