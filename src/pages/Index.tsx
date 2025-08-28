@@ -1,123 +1,88 @@
 import React from "react"
 import { Button } from "@/components/ui/button"
-import { PWANBadge } from "@/components/ui/pwan-badge"
-import { PWANCard, PWANCardContent, PWANCardDescription, PWANCardHeader, PWANCardTitle } from "@/components/ui/pwan-card"
 import { PWANSection } from "@/components/ui/pwan-section"
 import { PWANContainer } from "@/components/ui/pwan-container"
 import Navigation from "@/components/layout/Navigation"
 import Footer from "@/components/layout/Footer"
 
 const Index = () => {
+  const scrollToProperties = () => {
+    const element = document.getElementById('properties');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Hero Section */}
-      <PWANSection spacing="large" className="bg-gradient-to-b from-neutral-50 to-white">
+      <PWANSection id="home" spacing="large" className="bg-gradient-to-b from-white via-neutral-50/30 to-white">
         <PWANContainer>
-          <div className="text-center content-spacing">
-            <PWANBadge intent="verified" className="mb-6">
-              Trusted Real Estate Partner
-            </PWANBadge>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-pwan-navy mb-6 leading-tight">
-              Premium Real Estate
+          <div className="text-center max-w-4xl mx-auto py-20 md:py-32">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-pwan-navy mb-8 leading-tight tracking-tight">
+              Building Dreams,
               <br />
-              <span className="text-pwan-red">Made Simple</span>
+              <span className="font-medium text-pwan-red">One Plot at a Time.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Discover exceptional properties with PWAN Homes. Browse our curated collection 
-              of premium estates and experience seamless property transactions.
+            <p className="text-xl md:text-2xl text-neutral-500 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+              Discover exceptional properties and turn your vision into reality with Nigeria's most trusted real estate partner.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="primary" size="xl">
-                Browse Properties
-              </Button>
-              <Button variant="ghost" size="xl">
-                Learn More
+            <div className="flex justify-center">
+              <Button 
+                variant="primary" 
+                size="xl"
+                onClick={scrollToProperties}
+                className="text-lg px-12 py-4 h-auto font-medium focus:outline-none focus:ring-4 focus:ring-pwan-red/20 focus:ring-offset-2 transition-all duration-200 hover:scale-105"
+              >
+                Explore Properties
               </Button>
             </div>
           </div>
         </PWANContainer>
       </PWANSection>
 
-      {/* Features Preview */}
-      <PWANSection>
+      {/* Properties Section Placeholder */}
+      <PWANSection id="properties" className="bg-neutral-50">
         <PWANContainer>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-pwan-navy mb-4">
-              Why Choose PWAN Homes?
+          <div className="text-center py-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-pwan-navy mb-6">
+              Featured Properties
             </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              We provide exceptional service and expertise to make your property journey seamless.
+            <p className="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
+              Coming soon - Browse our exclusive collection of premium properties.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <PWANCard className="text-center p-8 hover:shadow-lg transition-all duration-300">
-              <PWANCardHeader>
-                <div className="w-12 h-12 bg-pwan-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-6 h-6 bg-pwan-red rounded"></div>
-                </div>
-                <PWANCardTitle className="text-xl">Premium Properties</PWANCardTitle>
-              </PWANCardHeader>
-              <PWANCardContent>
-                <PWANCardDescription>
-                  Carefully curated selection of high-quality properties in prime locations.
-                </PWANCardDescription>
-              </PWANCardContent>
-            </PWANCard>
-
-            <PWANCard className="text-center p-8 hover:shadow-lg transition-all duration-300">
-              <PWANCardHeader>
-                <div className="w-12 h-12 bg-pwan-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-6 h-6 bg-pwan-red rounded"></div>
-                </div>
-                <PWANCardTitle className="text-xl">Expert Guidance</PWANCardTitle>
-              </PWANCardHeader>
-              <PWANCardContent>
-                <PWANCardDescription>
-                  Professional advice and support throughout your property journey.
-                </PWANCardDescription>
-              </PWANCardContent>
-            </PWANCard>
-
-            <PWANCard className="text-center p-8 hover:shadow-lg transition-all duration-300">
-              <PWANCardHeader>
-                <div className="w-12 h-12 bg-pwan-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-6 h-6 bg-pwan-red rounded"></div>
-                </div>
-                <PWANCardTitle className="text-xl">Seamless Process</PWANCardTitle>
-              </PWANCardHeader>
-              <PWANCardContent>
-                <PWANCardDescription>
-                  Streamlined transactions with transparent processes and quick turnaround.
-                </PWANCardDescription>
-              </PWANCardContent>
-            </PWANCard>
           </div>
         </PWANContainer>
       </PWANSection>
 
-      {/* CTA Section */}
-      <PWANSection className="bg-pwan-navy">
+      {/* About Us Section Placeholder */}
+      <PWANSection id="about">
         <PWANContainer>
-          <div className="text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Find Your Dream Property?
+          <div className="text-center py-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-pwan-navy mb-6">
+              About PWAN Homes
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Start browsing our exclusive collection of premium properties today.
+            <p className="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
+              Coming soon - Learn about our mission and values.
             </p>
-            <Button 
-              variant="primary" 
-              size="xl"
-              className="bg-pwan-red hover:bg-pwan-red/90"
-            >
-              Get Started Now
-            </Button>
+          </div>
+        </PWANContainer>
+      </PWANSection>
+
+      {/* Contact Section Placeholder */}
+      <PWANSection id="contact" className="bg-neutral-50">
+        <PWANContainer>
+          <div className="text-center py-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-pwan-navy mb-6">
+              Contact Us
+            </h2>
+            <p className="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
+              Coming soon - Get in touch with our team.
+            </p>
           </div>
         </PWANContainer>
       </PWANSection>
