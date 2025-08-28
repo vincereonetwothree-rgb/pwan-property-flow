@@ -12,7 +12,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/494a13fc-fc96-49f2-9b6c-7824b95c357a.png" 
                 alt="PWAN Homes"
-                className="h-8 mb-4"
+                className="h-10 md:h-12 mb-4"
               />
               <p className="text-neutral-600 max-w-md leading-relaxed">
                 Your trusted partner in premium real estate. Discover exceptional properties 
