@@ -10,7 +10,7 @@ const Footer = () => {
             {/* Brand */}
             <div>
               <img 
-                src="/lovable-uploads/64f49d66-d8b4-4642-a622-1bdfe320833f.png" 
+                src="/lovable-uploads/494a13fc-fc96-49f2-9b6c-7824b95c357a.png" 
                 alt="PWAN Homes"
                 className="h-8 mb-4"
               />
