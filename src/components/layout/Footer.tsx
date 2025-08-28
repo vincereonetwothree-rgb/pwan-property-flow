@@ -8,10 +8,12 @@ const Footer = () => {
         <div className="py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand */}
-            <div className="md:col-span-2">
-              <h3 className="text-xl font-bold text-pwan-navy mb-4">
-                PWAN Homes
-              </h3>
+            <div>
+              <img 
+                src="/lovable-uploads/64f49d66-d8b4-4642-a622-1bdfe320833f.png" 
+                alt="PWAN Homes"
+                className="h-8 mb-4"
+              />
               <p className="text-neutral-600 max-w-md leading-relaxed">
                 Your trusted partner in premium real estate. Discover exceptional properties 
                 and experience seamless property transactions with our professional team.

@@ -9,9 +9,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-pwan-navy">
-              PWAN Homes
-            </h1>
+            <img 
+              src="/lovable-uploads/64f49d66-d8b4-4642-a622-1bdfe320833f.png" 
+              alt="PWAN Homes"
+              className="h-8 md:h-10"
+            />
           </div>
 
           {/* Navigation Links */}

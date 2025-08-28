@@ -26,6 +26,7 @@ export default {
 				/* PWAN Brand Colors */
 				'pwan-red': 'hsl(var(--pwan-red))',
 				'pwan-navy': 'hsl(var(--pwan-navy))',
+				'pwan-blue': 'hsl(var(--pwan-blue))',
 				
 				/* Neutral Scale */
 				'neutral': {
