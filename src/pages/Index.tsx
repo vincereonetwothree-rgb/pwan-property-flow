@@ -7,6 +7,7 @@ import Navigation from "@/components/layout/Navigation"
 import Footer from "@/components/layout/Footer"
 import PropertiesGrid from "@/components/properties/PropertiesGrid"
 import HeroBackground from "@/components/ui/hero-background"
+import HeroBackgroundGradient from "@/components/ui/hero-background-gradient"
 import { estates } from "@/data/estates"
 
 const Index = () => {
@@ -26,7 +27,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <PWANSection id="home" spacing="large" className="relative bg-gradient-to-b from-white via-neutral-50/30 to-white overflow-hidden">
-        <HeroBackground />
+        <HeroBackgroundGradient />
         <PWANContainer>
           <div className="relative z-10 text-center max-w-4xl mx-auto py-20 md:py-32">
             <motion.h1
