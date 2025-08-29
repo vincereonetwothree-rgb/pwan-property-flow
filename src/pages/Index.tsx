@@ -93,10 +93,14 @@ const Index = () => {
               </p>
             </div>
             
-            {/* Portrait Placeholder */}
+            {/* Agent Portrait */}
             <div className="flex justify-center md:justify-end order-first md:order-last">
-              <div className="w-64 h-64 rounded-full bg-neutral-200 flex items-center justify-center shadow-lg border-4 border-white">
-                <span className="text-neutral-500 font-medium">Agent Portrait</span>
+              <div className="w-64 h-64 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                <img 
+                  src="/lovable-uploads/a52b9675-5a0f-428d-a598-be90cdabbbce.png" 
+                  alt="Ezenwukwe Okwunna Evidence - PWAN Homes Real Estate Agent" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             
