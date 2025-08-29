@@ -3,102 +3,82 @@ import { Estate } from "@/types/estate";
 export const estates: Estate[] = [
   {
     id: "1",
-    name: "Royal Gardens Estate",
-    location: "Lekki, Lagos",
+    name: "Flourish Luxury Villas",
+    location: "Epe, Lagos",
     estateType: "Residential",
-    pricePerPlot: 15000000,
+    pricePerPlot: 8000000,
     documentationStatus: "Verified",
     flyerUrl: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Premium residential estate with modern amenities and excellent infrastructure."
+    description: "Premium residential estate with government excision title. Perfect for building your dream home in a serene environment."
   },
   {
     id: "2",
-    name: "Victoria Island Commercial Hub",
-    location: "Victoria Island, Lagos",
-    estateType: "Commercial",
-    pricePerPlot: 45000000,
+    name: "Flourish Luxury Villa Monastery",
+    location: "Sangotedo (Ajah), Lagos",
+    estateType: "Residential",
+    pricePerPlot: 50000000,
     documentationStatus: "Verified",
     flyerUrl: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Prime commercial plots in the heart of Victoria Island business district."
+    description: "Exclusive 600 sqm plots with Deed of Assignment & Survey. Premium location in the heart of Ajah."
   },
   {
     id: "3",
-    name: "Green Valley Homes",
-    location: "Ibeju-Lekki, Lagos",
+    name: "Flourish Pride Estate Phase 2",
+    location: "Abuja",
     estateType: "Residential",
-    pricePerPlot: 8500000,
-    documentationStatus: "In Progress",
+    pricePerPlot: 3000000,
+    documentationStatus: "Verified",
     flyerUrl: "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Affordable residential plots with flexible payment plans."
+    description: "500 sqm plots with Registered Survey & Deed of Assignment. Affordable luxury in Nigeria's capital city."
   },
   {
     id: "4",
-    name: "Platinum Heights",
-    location: "Ajah, Lagos",
-    estateType: "Mixed-Use",
-    pricePerPlot: 22000000,
-    documentationStatus: "Verified",
+    name: "Flourish Luxury Villas",
+    location: "Karshi, Abuja",
+    estateType: "Residential",
+    pricePerPlot: 2250000,
+    documentationStatus: "In Progress",
     flyerUrl: "https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Mixed-use development with residential and commercial opportunities."
+    description: "Affordable residential plots with flexible payment options. 6-month payment plan available."
   },
   {
     id: "5",
-    name: "Emerald Park Estate",
-    location: "Epe, Lagos",
-    estateType: "Land",
-    pricePerPlot: 5500000,
+    name: "Flourish Luxury Villas",
+    location: "Nibo, Anambra",
+    estateType: "Residential",
+    pricePerPlot: 7000000,
     documentationStatus: "Verified",
     flyerUrl: "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Spacious land plots perfect for agricultural or future development."
+    description: "464 sqm plots with Certificate of Occupancy. Prime location in the commercial hub of Anambra State."
   },
   {
     id: "6",
-    name: "Diamond Court",
-    location: "Ikeja, Lagos",
+    name: "Flourish City Abakaliki",
+    location: "Ezzamgbo, Ebonyi",
     estateType: "Residential",
-    pricePerPlot: 18500000,
+    pricePerPlot: 5400000,
     documentationStatus: "In Progress",
     flyerUrl: "https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Modern residential estate with 24/7 security and recreational facilities."
+    description: "Emerging residential estate with 12-month payment option available at ₦6,000,000."
   },
   {
     id: "7",
-    name: "Golden Gate Plaza",
-    location: "Surulere, Lagos",
-    estateType: "Commercial",
-    pricePerPlot: 35000000,
+    name: "Flourish Estate",
+    location: "Imo State",
+    estateType: "Residential",
+    pricePerPlot: 6000000,
     documentationStatus: "Verified",
     flyerUrl: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Strategic commercial plots in a bustling business district."
+    description: "464 sqm plots with Deed of Assignment & Registered Survey. Excellent investment opportunity in Imo State."
   },
   {
     id: "8",
-    name: "Paradise Gardens",
-    location: "Badagry, Lagos",
-    estateType: "Residential",
-    pricePerPlot: 6800000,
+    name: "Flourish Resort and Residence",
+    location: "Asaba, Delta",
+    estateType: "Mixed-Use",
+    pricePerPlot: 12000000,
     documentationStatus: "Verified",
     flyerUrl: "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Serene residential estate away from the city hustle with nature views."
-  },
-  {
-    id: "9",
-    name: "Crystal Bay Estate",
-    location: "Ikorodu, Lagos",
-    estateType: "Mixed-Use",
-    pricePerPlot: 12500000,
-    documentationStatus: "In Progress",
-    flyerUrl: "https://images.pexels.com/photos/1115816/pexels-photo-1115816.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Waterfront mixed-use development with stunning bay views."
-  },
-  {
-    id: "10",
-    name: "Heritage Park",
-    location: "Magodo, Lagos",
-    estateType: "Residential",
-    pricePerPlot: 25000000,
-    documentationStatus: "Verified",
-    flyerUrl: "https://images.pexels.com/photos/1370717/pexels-photo-1370717.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Luxury residential estate with premium amenities and gated security."
+    description: "464 sqm mixed-use plots with Deed of Assignment & Survey. Perfect for residential and commercial development."
   }
 ];

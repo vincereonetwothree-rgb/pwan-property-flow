@@ -55,10 +55,10 @@ const Index = () => {
         <PWANContainer>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-pwan-navy mb-6">
-              Featured Properties
+              Our Properties
             </h2>
             <p className="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
-              Browse our exclusive collection of premium properties across Lagos.
+              Discover premium estates across Lagos, Abuja, South-East, and Delta regions.
             </p>
           </div>
           
