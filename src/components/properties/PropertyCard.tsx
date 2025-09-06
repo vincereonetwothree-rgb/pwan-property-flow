@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Estate } from "@/types/estate";
 import { PWANCard, PWANCardContent } from "@/components/ui/pwan-card";
 import { PWANBadge } from "@/components/ui/pwan-badge";
@@ -17,6 +18,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   onFlyerReplace 
 }) => {
   const [flyerUrl, setFlyerUrl] = useState(estate.flyerUrl);
+  const navigate = useNavigate();
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-NG', {
@@ -48,6 +50,10 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
   const getBadgeIntent = (status: Estate['documentationStatus']) => {
     return status === "Verified" ? "verified" : "progress";
+  };
+
+  const handleOrderNow = () => {
+    navigate(`/order?property=${encodeURIComponent(estate.name)}`);
   };
 
   return (
@@ -107,6 +113,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           {/* Order Now Button */}
           <Button 
             variant="primary" 
+            onClick={handleOrderNow}
             className="w-full font-medium focus:outline-none focus:ring-4 focus:ring-pwan-red/20 focus:ring-offset-2 transition-all duration-200"
           >
             Order Now
