@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Calendar, MapPin, User, Phone } from "lucide-react";
+import { ArrowLeft, Calendar, MapPin, User, Phone, MessageCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -41,6 +42,7 @@ const OrderForm: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const propertyName = searchParams.get("property") || "Selected Property";
 
   const form = useForm<OrderFormData>({
@@ -54,18 +56,45 @@ const OrderForm: React.FC = () => {
     },
   });
 
-  const onSubmit = (data: OrderFormData) => {
-    console.log("Order form submitted:", data);
-    toast({
-      title: "Order Submitted Successfully!",
-      description: "We'll contact you within 24 hours to schedule your meeting.",
-    });
+  const onSubmit = async (data: OrderFormData) => {
+    setIsSubmitting(true);
     
-    // In a real app, you would send this data to your backend
-    // For now, we'll just navigate back to the home page
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
+    try {
+      const { error } = await supabase
+        .from('property_inquiries')
+        .insert([
+          {
+            property_name: propertyName,
+            full_name: data.fullName,
+            phone_number: data.phoneNumber,
+            preferred_time: data.preferredTime,
+            preferred_place: data.preferredPlace,
+            additional_notes: data.additionalNotes || null,
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Inquiry Submitted Successfully!",
+        description: "We'll contact you within 24 hours to schedule your meeting.",
+      });
+      
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    } catch (error) {
+      console.error('Error submitting inquiry:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -92,10 +121,30 @@ const OrderForm: React.FC = () => {
               <h1 className="text-3xl font-bold text-pwan-navy mb-2">
                 Schedule a Meeting
               </h1>
-              <p className="text-neutral-600">
+              <p className="text-neutral-600 mb-6">
                 Interested in <span className="font-medium text-pwan-navy">{propertyName}</span>? 
                 Fill out the form below and we'll get in touch to arrange a viewing.
               </p>
+              
+              {/* Contact Options */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <a
+                  href="tel:+2349026429948"
+                  className="flex items-center justify-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg text-green-700 hover:bg-green-100 transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  Call: +234 902 642 9948
+                </a>
+                <a
+                  href="https://wa.me/2349026429948"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg text-green-700 hover:bg-green-100 transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp
+                </a>
+              </div>
             </div>
 
             {/* Form */}
@@ -233,9 +282,9 @@ const OrderForm: React.FC = () => {
                     type="submit"
                     variant="primary"
                     className="w-full h-12 text-lg font-medium"
-                    disabled={form.formState.isSubmitting}
+                    disabled={isSubmitting}
                   >
-                    {form.formState.isSubmitting ? "Submitting..." : "Schedule Meeting"}
+                    {isSubmitting ? "Submitting..." : "Schedule Meeting"}
                   </Button>
                 </form>
               </Form>
