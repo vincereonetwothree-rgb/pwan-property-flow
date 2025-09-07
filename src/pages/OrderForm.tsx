@@ -136,7 +136,7 @@ const OrderForm: React.FC = () => {
                   Call: +234 902 642 9948
                 </a>
                 <a
-                  href="https://wa.me/2349026429948"
+                  href="https://wa.link/wfos1z"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg text-green-700 hover:bg-green-100 transition-colors"
